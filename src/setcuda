@@ -1,0 +1,24 @@
+echo " Welcome on: " $HOSTNAME " machine "
+echo ${USER}
+
+echo " --> Setting up Cuda 11.7 toolkit environment (03.2022)"
+
+export PATH=/usr/local/cuda-11.7/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-11.7/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
+echo " --> Local configuration -- "-
+echo " -> GPU "
+lspci | grep -i nvidia
+echo " -> OS "
+uname -m && cat /etc/*release
+echo " -> Compiler "
+gcc --version
+echo " -> Driver version "
+cat /proc/driver/nvidia/version
+echo " ----------------------------------- "
+echo " Available devices: "
+lspci | grep -i --color 'vga\|3d\|2d'
+alias ls='ls --color=tty'
+alias gedit='gedit &> /dev/null'
+#alias eclipse='/user/local/eclipse/eclipse'
+export PATH=/usr/local/eclipse${PATH:+:${PATH}}

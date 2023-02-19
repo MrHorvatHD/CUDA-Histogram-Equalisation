@@ -7,7 +7,6 @@ Report is available here: [Report](./CUDA_Histogram_Equalisation_Report.pdf)
 
 ## Authors
 - Matej Horvat
-- Vicente Martínez Orts
 
 ## License
 
